@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 #
 # Manta - Structural Variant and Indel Caller
 # Copyright (c) 2013-2019 Illumina, Inc.
@@ -42,7 +42,7 @@ def check_genotype(probandGT, fatherGT, motherGT):
 
 
 def add_dq(tokens, probandIx, dq):
-    for ix in xrange(9, len(tokens)):
+    for ix in range(9, len(tokens)):
         if (ix == probandIx):
             tokens[ix] += ":%s" % dq
         else:
@@ -85,7 +85,7 @@ def process_vcf(vcfFile, probandID,
         elif not(isIxFound):
             # parse format line to get the columns of proband & parents
             tokens = colNameLine.split()
-            for ix in xrange(len(tokens)):
+            for ix in range(len(tokens)):
                 if tokens[ix] == probandID:
                     probandIx = ix
                 elif tokens[ix] == fatherID:
@@ -112,7 +112,7 @@ def process_vcf(vcfFile, probandID,
 
         items = format.split(':')
         GTix = -1
-        for ix in xrange(len(items)):
+        for ix in range(len(items)):
             if items[ix] == "GT":
                 GTix = ix
 
@@ -148,10 +148,10 @@ def process_vcf(vcfFile, probandID,
             add_dq(tokens, probandIx, "0")
 
         newLine = ""
-        for i in xrange(8):
+        for i in range(8):
             newLine += tokens[i] + "\t"
         newLine += format
-        for i in xrange(9, len(tokens)):
+        for i in range(9, len(tokens)):
             newLine += "\t" + tokens[i]
         fpOut.write(newLine+"\n")
 
@@ -161,7 +161,7 @@ def process_vcf(vcfFile, probandID,
     fpStats.write("# of passed SVs: %s\n" % (countPassed))
     fpStats.write("# of filtered SVs: %s\n" % (countFiltered))
     fpStats.write("probandGT-fatherGT-motherGT\tcounts\n")
-    genotypes = consistencyDict.keys()
+    genotypes = list(consistencyDict.keys())
     genotypes.sort()
     for gt in genotypes:
         fpStats.write("%s\t%s\n" % (gt, consistencyDict[gt]))

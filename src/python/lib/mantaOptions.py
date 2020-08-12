@@ -42,7 +42,7 @@ def cleanLocals(locals_dict) :
     When passed a locals() dictionary, clean out all of the hidden keys and return
     """
 
-    return dict((k,v) for (k,v) in locals_dict.items() if not k.startswith("__") and k != "self")
+    return dict((k,v) for (k,v) in list(locals_dict.items()) if not k.startswith("__") and k != "self")
 
 
 

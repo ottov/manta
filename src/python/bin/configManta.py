@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 #
 # Manta - Structural Variant and Indel Caller
 # Copyright (c) 2013-2019 Illumina, Inc.
@@ -24,9 +24,9 @@ This script configures the Manta SV analysis workflow
 
 import os,sys
 
-if sys.version_info >= (3,0):
-    import platform
-    raise Exception("Manta does not currently support python3 (version %s detected)" % (platform.python_version()))
+#if sys.version_info >= (3,0):
+#    import platform
+#    raise Exception("Manta does not currently support python3 (version %s detected)" % (platform.python_version()))
 
 if sys.version_info < (2,6):
     import platform

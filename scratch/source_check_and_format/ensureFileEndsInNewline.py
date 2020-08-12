@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 """
 Treat all arguments as input files and append a newline to the end of each input file if one does not exist.
 

@@ -1,4 +1,4 @@
-#! /usr/bin/env python2
+#! /usr/bin/env python
 #
 # Manta - Structural Variant and Indel Caller
 # Copyright (c) 2013-2019 Illumina, Inc.
@@ -112,7 +112,7 @@ def process_block(recordBlock, nextPos, filteredSites):
             ploidySum.append(gtPloidy)
         overlapIds = [0]
 
-        for ix in xrange(1, len(recordBlock)):
+        for ix in range(1, len(recordBlock)):
             record = recordBlock[ix]
             pos = record.pos
             svLen = -1

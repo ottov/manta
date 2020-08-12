@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 """
 apply new header to a generic scripting file which uses "#" comments
 """
